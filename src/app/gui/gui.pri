@@ -49,6 +49,9 @@ FORMS += \
     $$PWD/debuglog.ui \
     $$PWD/firmwaremanager.ui
 
+TRANSLATIONS += \
+    $$PWD/patternpaint_de.ts
+
 macx {
     # App nap, to prevent macOS from sleeping PatternPaint
     HEADERS  += \
