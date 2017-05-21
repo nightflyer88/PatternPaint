@@ -11,6 +11,7 @@
 #include "fixture.h"
 #include "autoupdater.h"
 #include "ui_mainwindow.h"
+#include "defaults.h"
 
 #include <QMainWindow>
 #include <QProgressDialog>

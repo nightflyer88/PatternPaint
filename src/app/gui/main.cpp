@@ -4,18 +4,22 @@
 #include <QSettings>
 #include <QString>
 #include <QTranslator>
+#include <QDebug>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    QTranslator translator;
-    translator.load("patternpaint_de");
-    a.installTranslator(&translator);
-
     a.setOrganizationName(ORGANIZATION_NAME);
     a.setOrganizationDomain(ORGANIZATION_DOMAIN);
     a.setApplicationName(APPLICATION_NAME);
+
+    QSettings settings;
+    QString language = ":/" + settings.value("PatternPaint/language", DEFAULT_LANGUAGE).toString();
+
+    QTranslator translator;
+    translator.load(language);
+    a.installTranslator(&translator);
 
     qSetMessagePattern("%{type} %{function}: %{message}");
 
